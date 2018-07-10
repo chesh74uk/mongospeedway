@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Home team name:</strong>
+  <%= @meeting.home_team_name %>
+</p>
+
+<p>
+  <strong>Away team name:</strong>
+  <%= @meeting.away_team_name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @meeting.date %>
+</p>
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', meetings_path %>
