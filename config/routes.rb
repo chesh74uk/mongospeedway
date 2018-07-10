@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'heats/new'
+  get 'heats/create'
+  get 'heats/edit'
+  get 'heats/update'
   root "meetings#index"
   resources :meetings
   resources :heats
