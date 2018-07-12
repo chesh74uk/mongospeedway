@@ -1,6 +1,6 @@
 class Heat
   include Mongoid::Document
-  field :heat_number, type: Integer
-  field :heat_time, type: Decimal
-  embedded_in :meeting
+  field :heat_number, type: String
+  field :heat_time, type: String
+  embedded_in :meeting, inverse_of: :heats
 end

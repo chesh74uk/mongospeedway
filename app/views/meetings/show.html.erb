@@ -15,5 +15,13 @@
   <%= @meeting.date %>
 </p>
 
+<p>
+  <strong>Gate:</strong>
+  <%= @meeting.gate %>
+</p>
+
 <%= link_to 'Edit', edit_meeting_path(@meeting) %> |
 <%= link_to 'Back', meetings_path %>
+
+<p></p>
+<%= link_to 'Add heat', new_meeting_heat_path(@meeting) %>
