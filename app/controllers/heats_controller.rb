@@ -38,7 +38,11 @@ class HeatsController < ApplicationController
   
   
   def heat_params
-      params.require(:heat).permit(:heat_number, :heat_time)
+      params.require(:heat).permit(:heat_number, :heat_time, 
+                              :red_gate, :red_score, :red_rider,
+                              :blue_gate, :blue_score, :blue_rider,
+                              :white_gate, :white_score, :white_rider,
+                              :yellow_gate, :yellow_score, :yellow_rider)
   end
   
 end

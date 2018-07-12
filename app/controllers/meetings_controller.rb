@@ -59,6 +59,13 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:home_team_name, :away_team_name, :date, :gate, heat_attributes: [:heat_number, :heat_time])
+      params.require(:meeting).permit(:home_team_name, :away_team_name, :date, :gate, 
+                                      heat_attributes: [:heat_number, :heat_time,
+                                       :red_gate, :red_score, :red_rider,
+                                       :blue_gate, :blue_score, :blue_rider,
+                                       :white_gate, :white_score, :white_rider,
+                                       :yellow_gate, :yellow_score, :yellow_rider])
     end
 end
+ 
+
