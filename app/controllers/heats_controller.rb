@@ -6,6 +6,7 @@ class HeatsController < ApplicationController
     @meeting = Meeting.find(params[:meeting_id])
     @heat = Heat.new
     @heat.build_meeting
+    heat_number_set
   end
 
   def create
@@ -31,6 +32,16 @@ class HeatsController < ApplicationController
   
   
   private
+  
+  def heat_number_set
+        last_heat = Heat.where(meeting_id: @meeting.id)
+        if last_heat.nil?
+            @heat_number = 1
+        else
+            @heat_number = last_heat.count + 1
+        end
+        @heat.heat_number = @heat_number
+  end
   
   def set_heat
     @heat - Heat.find(params[:id])

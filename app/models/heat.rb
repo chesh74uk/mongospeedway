@@ -15,4 +15,7 @@ class Heat
   field :yellow_score, type: Integer
   field :yellow_rider, type: String
   embedded_in :meeting, inverse_of: :heats
+  
+  SCORE = [3,2,1,0]
+  
 end
