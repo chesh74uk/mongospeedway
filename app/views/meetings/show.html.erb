@@ -10,6 +10,7 @@
 <p>
   <strong>Away team name:</strong>
   <%= @meeting.away_team_name %>
+  <%= link_to_if(@meeting.away_riders.nil?,  'Add riders', new_meeting_away_rider_path(@meeting, @away_rider)) %>
 </p>
 
 <p>

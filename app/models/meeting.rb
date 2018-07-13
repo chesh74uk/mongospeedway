@@ -6,6 +6,6 @@ class Meeting
   field :date, type: Date
   embeds_many :heats
   embeds_one :home_riders
-  accepts_nested_attributes_for :heats
-  accepts_nested_attributes_for :home_riders
+  embeds_one :away_riders
+  accepts_nested_attributes_for :heats, :home_riders, :away_riders
 end
