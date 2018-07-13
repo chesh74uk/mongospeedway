@@ -64,7 +64,10 @@ class MeetingsController < ApplicationController
                                        :red_gate, :red_score, :red_rider,
                                        :blue_gate, :blue_score, :blue_rider,
                                        :white_gate, :white_score, :white_rider,
-                                       :yellow_gate, :yellow_score, :yellow_rider])
+                                       :yellow_gate, :yellow_score, :yellow_rider],
+                                       home_riders_attributes: [:home_rider_1, :home_rider_2,
+                                       :home_rider_3, :home_rider_4, :home_rider_5,
+                                       :home_rider_6, :home_rider_7])
     end
 end
  

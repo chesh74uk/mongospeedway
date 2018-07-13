@@ -3,6 +3,8 @@
 <p>
   <strong>Home team name:</strong>
   <%= @meeting.home_team_name %>
+  <%= link_to_if(@meeting.home_riders.nil?,  'Add riders', new_meeting_home_rider_path(@meeting, @home_rider)) %>
+  
 </p>
 
 <p>
