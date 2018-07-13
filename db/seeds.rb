@@ -19,11 +19,11 @@ csv.each do |row|
     t.gate_one = row['gate_one']
     t.gate_two = row['gate_two']
     t.save
-    puts "#{t.heat_id}, #{t.helmet_colour} saved"
+    puts "#{t.heat_number}, #{t.helmet_colour} saved"
 end
 puts "There are now #{Programme.count} rows in the programme table"
 
-=begin
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'team.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
@@ -34,4 +34,3 @@ csv.each do |row|
     puts "#{t.rider}, #{t.team_name} saved"
 end
 puts "There are now #{Team.count} rows in the team table"
-=end
