@@ -1,31 +1,44 @@
 <p id="notice"><%= notice %></p>
+
 <div class="row ">
   <div class="col-md-12">
-    <div class="page-header"><h1>Meetings</h1></div>
+    <div class="page-header"><h3>Meetings</h3></div>
   </div>
 </div>
+
 <div class="row ">
   <div class="col-md-12">
-    <%= button_to "Add meeting", new_meeting_path, method: :get, class: "btn-lg btn-dark btn-block" %>
+    <%= button_to "Add meeting", new_meeting_path, method: :get, class: "btn btn-small btn-block" %>
   </div>
 </div>
+
 <% @meetings.each do |meeting| %>
 <hr>
- <div class="card text-center">
-    <div class="card-body">
-      <%= button_to meeting.date.strftime("%a %b %d"), meeting, method: :get, class: "btn btn-lg btn-secondary btn-block" %>
-    </div>
+<div class="row">
+  <div class="col-md-12">
+      <%= button_to meeting.date.strftime("%a %b %d"), meeting, method: :get, class: "btn btn-info btn-block" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
     <div class="d-flex bd-highlight">
-      <div class="p-2 flex-fill bd-highlight"><h4><%= meeting.home_team_name %></h4></div>
-      <div class="p-2 flex-fill bd-highlight"><h4><%= meeting.away_team_name %></h4></div>
-    </div>
-    <div class="card-footer text-muted">
-      <nav class="nav nav-pills nav-justified">
-        <%= link_to 'Edit', edit_meeting_path(meeting), class: 'nav-link' %>
-        <%= link_to 'Delete', meeting, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
-      </nav>
+      <div class="p-2 flex-fill bd-highlight"><%= meeting.home_team_name %></div>
+      <div class="p-2 flex-fill bd-highlight"><%= meeting.away_team_name %></div>
     </div>
   </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight">
+        <%= button_to 'Edit', edit_meeting_path(meeting), class: 'btn btn-sm btn-outline-secondary' %>
+      </div>
+      <div class="p-2 flex-fill bd-highlight">
+        <%= button_to 'Delete', meeting, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
 
 

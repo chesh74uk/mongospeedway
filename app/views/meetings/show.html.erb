@@ -1,30 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Home team name:</strong>
-  <%= @meeting.home_team_name %>
-  <%= link_to_if(@meeting.home_riders.nil?,  'Add riders', new_meeting_home_rider_path(@meeting, @home_rider)) %>
-  
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <h5><%= @meeting.date.strftime("%a %b %d") %></h5>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Away team name:</strong>
-  <%= @meeting.away_team_name %>
-  <%= link_to_if(@meeting.away_riders.nil?,  'Add riders', new_meeting_away_rider_path(@meeting, @away_rider)) %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight"><%= @meeting.home_team_name %></div>
+      <div class="p-2 flex-fill bd-highlight"><%= @meeting.away_team_name %></div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @meeting.date %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight">
+        <nav class="nav nav-pills nav-justified justify-content-center">
+          <%= @meeting.home_riders.nil? ? 
+                (button_to 'Add riders', new_meeting_home_rider_path(@meeting, @home_rider), class: "btn btn-outline-dark") : 
+                (button_to 'Edit riders', new_meeting_home_rider_path(@meeting, @home_rider), class: "btn btn-outline-dark") %>
+        </nav>
+      </div>
+      <div class="p-2 flex-fill bd-highlight">
+        <nav class="nav nav-pills nav-justified justify-content-center">
+          <%= @meeting.away_riders.nil? ? 
+                (button_to 'Add riders', new_meeting_away_rider_path(@meeting, @away_rider), class: "btn btn-outline-dark") : 
+                (button_to 'Edit riders', new_meeting_away_rider_path(@meeting, @away_rider), class: "btn btn-outline-dark") %>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Gate:</strong>
-  <%= @meeting.gate %>
-</p>
-
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
 
 <p></p>
-<%= link_to 'Add heat', new_meeting_heat_path(@meeting) %>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <%= button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block" %>
+  </div>
+</div>
+
