@@ -1,7 +1,7 @@
 <%= simple_form_for @meeting do |f| %>
+  <%= f.input :date %>
   <%= f.input :home_team_name %>
   <%= f.input :away_team_name %>
-  <%= f.input :date %>
   <%= f.input :gate, collection: ["1 and 3", "2 and 4"] %>
   <%= f.submit %>
 <% end %>
