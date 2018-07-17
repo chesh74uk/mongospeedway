@@ -1,5 +1,5 @@
 class HomeRidersController < ApplicationController
-  before_action :set_home_rider, only: [:show, :edit, :update, :destroy]
+
   
     def new
         @meeting = Meeting.find(params[:meeting_id])
@@ -8,23 +8,42 @@ class HomeRidersController < ApplicationController
     end
 
     def create
-        @meeting = Meeting.find(params[:meeting_id])
-        @meeting.home_riders = HomeRider.new(home_rider_params)
-        respond_to do |format|
-          if @meeting.save
-            format.html { redirect_to meeting_path(@meeting), notice: 'Home riders saved' }
-          else
-            format.html { redirect_to new_meeting_home_rider_path, notice: 'Oops!' }
-          end
+      @meeting = Meeting.find(params[:meeting_id])
+      @meeting.home_riders = HomeRider.new(home_rider_params)
+      respond_to do |format|
+        if @meeting.save
+          format.html { redirect_to meeting_path(@meeting), notice: 'Home riders saved' }
+        else
+          format.html { redirect_to new_meeting_home_rider_path, notice: 'Oops!' }
         end
       end
+    end
+    
+    def edit
+      @meeting = Meeting.find(params[:meeting_id])
+      @home_rider = @meeting.home_riders
+    end
+    
+    def update
+
+      @meeting = Meeting.find(params[:meeting_id])
+      respond_to do |format|
+        if @meeting.home_riders.update(home_rider_params)
+          format.html { redirect_to (meetings_path), notice: 'Riders updated.' }
+        else
+          format.html { render :edit, notice: 'Oops'  }
+  
+        end
+      end
+    end
   
   
 
 private 
 
     def set_home_rider
-        @home_rider = HomeRiders.find(params[:meeting_id])
+      @meeting = Meeting.find(params[:id])
+      @home_rider = @meeting.home_riders
     end
     
     def home_rider_params

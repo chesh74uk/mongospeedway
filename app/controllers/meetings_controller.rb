@@ -8,11 +8,13 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/1
   def show
+    @home_rider = @meeting.home_riders
   end
 
   # GET /meetings/new
   def new
     @meeting = Meeting.new
+    @team_names = Team.distinct(:team_name)
   end
 
   # GET /meetings/1/edit

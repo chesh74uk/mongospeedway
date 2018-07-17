@@ -1,10 +1,11 @@
-<%= simple_form_for [@meeting, @away_rider] do |f| %>
-    <%= f.input :away_rider_1 %>
-    <%= f.input :away_rider_2 %>
-    <%= f.input :away_rider_3 %>
-    <%= f.input :away_rider_4 %>
-    <%= f.input :away_rider_5 %>
-    <%= f.input :away_rider_6 %>
-    <%= f.input :away_rider_7 %>
+<%= simple_form_for([@meeting, @away_rider]) do |f| %>
+    <%= f.input :away_rider_1, input_html: {value: get_name(@meeting.away_team_name, 1)} %>
+    <%= f.input :away_rider_2, input_html: {value: get_name(@meeting.away_team_name, 2)} %>
+    <%= f.input :away_rider_3, input_html: {value: get_name(@meeting.away_team_name, 3)} %>
+    <%= f.input :away_rider_4, input_html: {value: get_name(@meeting.away_team_name, 4)} %>
+    <%= f.input :away_rider_5, input_html: {value: get_name(@meeting.away_team_name, 5)} %>
+    <%= f.input :away_rider_6, input_html: {value: get_name(@meeting.away_team_name, 6)} %>
+    <%= f.input :away_rider_7, input_html: {value: get_name(@meeting.away_team_name, 7)} %>
+    <%= f.hidden_field :meeting_id, value: @meeting.id %>
     <%= f.button :submit %>
 <% end %>

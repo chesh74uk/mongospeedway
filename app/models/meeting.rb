@@ -7,5 +7,6 @@ class Meeting
   embeds_many :heats
   embeds_one :home_riders
   embeds_one :away_riders
-  accepts_nested_attributes_for :heats, :home_riders, :away_riders
+  accepts_nested_attributes_for :heats, :home_riders, :away_riders, autosave: true
+  validates :date, :home_team_name, :away_team_name, presence: true
 end
