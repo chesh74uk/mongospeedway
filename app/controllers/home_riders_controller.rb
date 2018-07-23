@@ -25,11 +25,10 @@ class HomeRidersController < ApplicationController
     end
     
     def update
-
       @meeting = Meeting.find(params[:meeting_id])
       respond_to do |format|
         if @meeting.home_riders.update(home_rider_params)
-          format.html { redirect_to (meetings_path), notice: 'Riders updated.' }
+          format.html { redirect_to (meeting_path(@meeting)), notice: 'Home riders updated.' }
         else
           format.html { render :edit, notice: 'Oops'  }
   
@@ -41,11 +40,6 @@ class HomeRidersController < ApplicationController
 
 private 
 
-    def set_home_rider
-      @meeting = Meeting.find(params[:id])
-      @home_rider = @meeting.home_riders
-    end
-    
     def home_rider_params
        params.require(:home_rider).permit(:home_rider_1, :home_rider_2, :home_rider_3,
                                             :home_rider_4, :home_rider_5, :home_rider_6, :home_rider_7) 

@@ -1,6 +1,6 @@
 class Heat
   include Mongoid::Document
-  field :heat_number, type: String
+  field :heat_number, type: Integer
   field :heat_time, type: String
   field :red_gate, type: Integer
   field :red_score, type: Integer

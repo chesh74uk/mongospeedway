@@ -31,7 +31,7 @@
         <nav class="nav nav-pills nav-justified justify-content-center">
           <%= @meeting.away_riders.nil? ? 
                 (button_to 'Add riders', new_meeting_away_rider_path(@meeting, @away_rider), class: "btn btn-outline-dark", method: :get) : 
-                (button_to 'Edit riders', new_meeting_away_rider_path(@meeting, @away_rider), class: "btn btn-outline-dark") %>
+                (button_to 'Edit riders', edit_meeting_away_rider_path(@meeting, @away_rider ), class: "btn btn-outline-dark", method: :get) %>
         </nav>
       </div>
     </div>
@@ -44,7 +44,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%= button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block" %>
+    <%= button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block", method: :get %>
   </div>
 </div>
 

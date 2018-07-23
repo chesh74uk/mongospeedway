@@ -4,6 +4,8 @@ class HeatsController < ApplicationController
   
   def new
     @meeting = Meeting.find(params[:meeting_id])
+    @home_riders = @meeting.home_riders
+    @away_riders = @meeting.away_riders
     @heat = Heat.new
     @heat.build_meeting
     heat_number_set

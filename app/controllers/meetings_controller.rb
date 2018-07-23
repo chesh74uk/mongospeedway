@@ -9,6 +9,7 @@ class MeetingsController < ApplicationController
   # GET /meetings/1
   def show
     @home_rider = @meeting.home_riders
+    @away_rider = @meeting.away_riders
   end
 
   # GET /meetings/new
