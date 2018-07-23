@@ -1,7 +1,7 @@
 <%= simple_form_for ([@meeting, @heat]) do |f| %>
-<%= f.hidden_field  :heat_number, value: @heat.heat_number %>
+<%= f.input  :heat_number, value: @heat.heat_number %>
 <%= f.input :heat_time %>
-<%= f.input :red_gate %>
+<%= f.input :red_gate, input_html: { value: get_red_gate(@heat.heat_number, @meeting.id) } %>
 <%= f.input :red_score, collection: Heat::SCORE, input_html: {class: 'selectpicker'} %>
 <%= f.input :red_rider, collection: [[@home_riders.home_rider_1, @home_riders.home_rider_1],
                                      [@home_riders.home_rider_2, @home_riders.home_rider_2],
@@ -12,7 +12,7 @@
                                      [@home_riders.home_rider_7, @home_riders.home_rider_7]],
                                      selected: get_red_rider(@heat.heat_number, @meeting.id),
                                      input_html: {class: 'selectpicker'}%>
-<%= f.input :blue_gate %>
+<%= f.input :blue_gate, input_html: { value: get_blue_gate(@heat.heat_number, @meeting.id) } %>
 <%= f.input :blue_score, collection: Heat::SCORE %>
 <%= f.input :blue_rider, collection: [[@home_riders.home_rider_1, @home_riders.home_rider_1],
                                      [@home_riders.home_rider_2, @home_riders.home_rider_2],
@@ -24,7 +24,7 @@
                                      selected: get_blue_rider(@heat.heat_number, @meeting.id),
                                      input_html: {class: 'selectpicker'} %>
 
-<%= f.input :white_gate, value: get_blue_rider(@heat.heat_number, @meeting.id) %>
+<%= f.input :white_gate, input_html: {value: get_white_gate(@heat.heat_number, @meeting.id) } %>
 <%= f.input :white_score, collection: Heat::SCORE %>
 <%= f.input :white_rider, collection: [[@away_riders.away_rider_1, @away_riders.away_rider_1],
                                        [@away_riders.away_rider_2, @away_riders.away_rider_2],
@@ -35,7 +35,7 @@
                                        [@away_riders.away_rider_7, @away_riders.away_rider_7]],
                                      selected: get_white_rider(@heat.heat_number, @meeting.id),
                                      input_html: {class: 'selectpicker'} %>
-<%= f.input :yellow_gate %>
+<%= f.input :yellow_gate, input_html: {value: get_yellow_gate(@heat.heat_number, @meeting.id) }  %>
 <%= f.input :yellow_score, collection: Heat::SCORE %>
 <%= f.input :yellow_rider, collection: [[@away_riders.away_rider_1, @away_riders.away_rider_1],
                                         [@away_riders.away_rider_2, @away_riders.away_rider_2],

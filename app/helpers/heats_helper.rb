@@ -1,4 +1,52 @@
 module HeatsHelper
+    
+    def get_red_gate(heat, id)
+       meeting = Meeting.find(id)
+       if meeting.gate == "1 and 3"
+           gate = {1 => 3, 2 => 2, 3 => 3, 4 => 3, 5 => 1, 6 => 1, 7 => 2, 8 => 4, 9 => 4, 10 => 4, 11 => 1, 12 => 1, 13 => 2, 14 => 3}
+           gate[heat]
+       else
+           gate = {1 => 4, 2 => 1, 3 => 4, 4 => 4, 5 => 1, 6 => 2, 7 => 1, 8 => 3, 9 => 3, 10 => 3, 11 => 2, 12 => 2, 13 => 1, 14 => 4}
+           gate[heat]
+       end
+    end
+    
+    def get_blue_gate(heat, id)
+       meeting = Meeting.find(id)
+       if meeting.gate == "1 and 3"
+           gate = {1 => 1, 2 => 4, 3 => 1, 4 => 1, 5 => 3, 6 => 3, 7 => 4, 8 => 2, 9 => 2, 10 => 2, 11 => 3, 12 => 3, 13 => 4, 14 => 1}
+           gate[heat]
+       else
+           gate = {1 => 2, 2 => 3, 3 => 2, 4 => 2, 5 => 3, 6 => 4, 7 => 3, 8 => 1, 9 => 1, 10 => 1, 11 => 4, 12 => 4, 13 => 3, 14 => 2}
+           gate[heat]
+       end
+    end
+    
+    def get_white_gate(heat, id)
+       meeting = Meeting.find(id)
+       if meeting.gate == "1 and 3"
+           gate = {1 => 4, 2 => 1, 3 => 2, 4 => 4, 5 => 2, 6 => 2, 7 => 1, 8 => 3, 9 => 1, 10 => 3, 11 => 2, 12 => 4, 13 => 1, 14 => 2}
+           gate[heat]
+       else
+           gate = {1 => 3, 2 => 2, 3 => 1, 4 => 3, 5 => 4, 6 => 1, 7 => 2, 8 => 4, 9 => 2, 10 => 4, 11 => 1, 12 => 3, 13 => 2, 14 => 1}
+           gate[heat]
+       end
+    end
+    
+    def get_yellow_gate(heat, id)
+       meeting = Meeting.find(id)
+       if meeting.gate == "1 and 3"
+           gate = {1 => 2, 2 => 3, 3 => 4, 4 => 2, 5 => 4, 6 => 4, 7 => 3, 8 => 1, 9 => 3, 10 => 1, 11 => 4, 12 => 2, 13 => 3, 14 => 4}
+           gate[heat]
+       else
+           gate = {1 => 1, 2 => 4, 3 => 3, 4 => 1, 5 => 2, 6 => 3, 7 => 4, 8 => 2, 9 => 4, 10 => 2, 11 => 3, 12 => 1, 13 => 4, 14 => 3}
+           gate[heat]
+       end
+    end
+    
+    
+    
+    
    
     def get_red_rider(heat, id)
         @meeting = Meeting.find(id)
