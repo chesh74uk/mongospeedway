@@ -1,9 +1,10 @@
 class HeatsController < ApplicationController
-  before_action :set_heat, only: [:show, :edit, :update, :destroy]
+
 
   
   def new
     @meeting = Meeting.find(params[:meeting_id])
+    @heat = @meeting.heats.where(params[:id])
     @home_riders = @meeting.home_riders
     @away_riders = @meeting.away_riders
     @heat = Heat.new
@@ -26,6 +27,10 @@ class HeatsController < ApplicationController
 
 
   def edit
+    @meeting = Meeting.find(params[:meeting_id])
+    @heat = @meeting.heats.find(params[:id])
+    @home_riders = @meeting.home_riders
+    @away_riders = @meeting.away_riders
   end
 
   def update
@@ -36,18 +41,16 @@ class HeatsController < ApplicationController
   private
   
   def heat_number_set
-        last_heat = Heat.where(meeting_id: @meeting.id)
+        last_heat = @meeting.heats
         if last_heat.nil?
-            @heat_number = 1
+            heat_number = 1
         else
-            @heat_number = last_heat.count + 1
+            heat_number = last_heat.count + 1
         end
-        @heat.heat_number = @heat_number
+        @heat.heat_number = heat_number
   end
   
-  def set_heat
-    @heat - Heat.find(params[:id])
-  end
+
   
   
   def heat_params

@@ -48,3 +48,16 @@
   </div>
 </div>
 
+<% @meeting.heats.each do |f| %>
+
+<div class="row">
+    <div class="col-sm-12">
+      <%= button_to "Heat #{f.heat_number}: Time #{f.heat_time}", edit_meeting_heat_path(@meeting, f), method: :get, class: "btn btn-lg btn-outline-secondary btn-block" %>
+    </div>
+</div>
+
+
+<% end %>
+
+<hr>
+
