@@ -34,6 +34,15 @@ class HeatsController < ApplicationController
   end
 
   def update
+    @meeting = Meeting.find(params[:meeting_id])
+    @heat = @meeting.heats.find(params[:id])
+    respond_to do |format|
+      if @heat.update(heat_params)
+        format.html { redirect_to meeting_path(@meeting), notice: 'Heat updated' }
+      else
+        format.html { render :new, notice: 'Oops!' }
+      end
+    end
   end
   
   
