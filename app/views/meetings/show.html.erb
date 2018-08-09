@@ -23,15 +23,15 @@
       <div class="p-2 flex-fill bd-highlight">
         <nav class="nav nav-pills nav-justified justify-content-center">
           <%= @meeting.home_riders.nil? ? 
-                (button_to 'Add riders', new_meeting_home_rider_path(@meeting, @home_rider), class: "btn btn-outline-dark", method: :get) : 
-                (button_to 'Edit riders', edit_meeting_home_rider_path(@meeting, @home_rider ), class: "btn btn-outline-dark", method: :get) %>
+                (button_to 'Add riders', new_meeting_home_rider_path(@meeting, @home_rider), class: "btn btn-sm btn-outline-dark", method: :get) : 
+                (button_to 'Edit riders', edit_meeting_home_rider_path(@meeting, @home_rider ), class: "btn btn-sm btn-outline-dark", method: :get) %>
         </nav>
       </div>
       <div class="p-2 flex-fill bd-highlight">
         <nav class="nav nav-pills nav-justified justify-content-center">
           <%= @meeting.away_riders.nil? ? 
-                (button_to 'Add riders', new_meeting_away_rider_path(@meeting, @away_rider), class: "btn btn-outline-dark", method: :get) : 
-                (button_to 'Edit riders', edit_meeting_away_rider_path(@meeting, @away_rider ), class: "btn btn-outline-dark", method: :get) %>
+                (button_to 'Add riders', new_meeting_away_rider_path(@meeting, @away_rider), class: "btn btn-sm btn-outline-dark", method: :get) : 
+                (button_to 'Edit riders', edit_meeting_away_rider_path(@meeting, @away_rider ), class: "btn btn-sm btn-outline-dark", method: :get) %>
         </nav>
       </div>
     </div>
@@ -58,7 +58,8 @@
 
 <div class="row">
     <div class="col-sm-12">
-      <%= button_to "Heat #{f.heat_number}: Time #{f.heat_time}", edit_meeting_heat_path(@meeting, f), method: :get, class: "btn btn-lg btn-outline-secondary btn-block" %>
+      <%= button_to "Heat #{f.heat_number}: Time #{f.heat_time}", edit_meeting_heat_path(@meeting, f), method: :get, class: "btn btn-outline-secondary btn-block" %>
+      <br>
     </div>
 </div>
 
