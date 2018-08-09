@@ -18,4 +18,7 @@ class Heat
   
   SCORE = [3,2,1,0]
   
+  validates :heat_time, presence: true
+  validates :red_score, :blue_score, :white_score, :yellow_score, numericality: { only_integer: true }   
+  
 end

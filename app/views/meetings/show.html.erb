@@ -11,8 +11,8 @@
 <div class="row">
   <div class="col-md-12">
     <div class="d-flex bd-highlight">
-      <div class="p-2 flex-fill bd-highlight"><%= @meeting.home_team_name %></div>
-      <div class="p-2 flex-fill bd-highlight"><%= @meeting.away_team_name %></div>
+      <div class="p-2 flex-fill bd-highlight"><%= @meeting.home_team_name %>: <%= home_score %></div>
+      <div class="p-2 flex-fill bd-highlight"><%= @meeting.away_team_name %>: <%= away_score %></div>
     </div>
   </div>
 </div>
@@ -45,6 +45,12 @@
 <div class="row">
   <div class="col-md-12">
     <%= button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block", method: :get %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <hr>
   </div>
 </div>
 
