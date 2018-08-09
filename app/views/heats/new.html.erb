@@ -1,4 +1,17 @@
 <h3>Heat <%= @heat.heat_number %></h3>
+<div>
+    <table class="table table-bordered table-sm text-center">
+        <tbody>
+            <tr>
+                <td class="red-gate"><%= get_red_gate(@heat.heat_number, @meeting.id) %></td>
+                <td class="blue-gate"><%= get_blue_gate(@heat.heat_number, @meeting.id) %></td>
+                <td class="white-gate"><%= get_white_gate(@heat.heat_number, @meeting.id) %></td>
+                <td class="yellow-gate"><%= get_yellow_gate(@heat.heat_number, @meeting.id) %></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
 
 <p></p>
 <%= render 'form' %>

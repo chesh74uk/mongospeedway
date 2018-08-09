@@ -1,7 +1,8 @@
 <%= simple_form_for ([@meeting, @heat]) do |f| %>
-<%= f.input  :heat_number, value: @heat.heat_number %>
+<%= f.hidden_field  :heat_number, value: @heat.heat_number %>
 <%= f.input :heat_time %>
-<%= f.input :red_gate, input_html: { value: get_red_gate(@heat.heat_number, @meeting.id) } %>
+
+<%= f.input :red_gate, input_html: { value: get_red_gate(@heat.heat_number, @meeting.id) }  %>
 <%= f.input :red_score, collection: Heat::SCORE, input_html: {class: 'selectpicker'} %>
 <%= f.input :red_rider, collection: [[@home_riders.home_rider_1, @home_riders.home_rider_1],
                                      [@home_riders.home_rider_2, @home_riders.home_rider_2],
