@@ -2,7 +2,7 @@
   <%= f.input :date, as: :string, placeholder: "#{Date.today}" %>
   <%= f.input :home_team_name, collection: @team_names %>
   <%= f.input :away_team_name, collection: @team_names %>
-  <%= f.input :gate, collection: ["1 and 3", "2 and 4"] %>
+  <%= f.input :gate, collection: ["1 and 3", "2 and 4"], input_html:{disabled: @meeting.heats.present?} %>
   <%= f.submit %>
 <% end %>
 
