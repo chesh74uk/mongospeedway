@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <h5><%= @meeting.date.strftime("%a %b %d") %></h5>
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-hover table-sm table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th><%= @meeting.home_team_name %></td>
+            <th>Total</td>
+            <th><%= @meeting.away_team_name %></td>
+            <th>Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td><%= @meeting.home_riders.home_rider_1 %></td>
+            <td></td>
+            <td><%= @meeting.away_riders.away_rider_1 %></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th scope="row">2</th>
+            <td><%= @meeting.home_riders.home_rider_2 %></td>
+            <td></td>
+            <td><%= @meeting.away_riders.away_rider_2 %></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th scope="row">3</th>
+            <td><%= @meeting.home_riders.home_rider_3 %></td>
+            <td></td>
+            <td><%= @meeting.away_riders.away_rider_3 %></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th scope="row">4</th>
+            <td><%= @meeting.home_riders.home_rider_4 %></td>
+            <td></td>
+            <td><%= @meeting.away_riders.away_rider_4 %></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th scope="row">5</th>
+            <td><%= @meeting.home_riders.home_rider_5 %></td>
+            <td></td>
+            <td><%= @meeting.away_riders.away_rider_5 %></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th scope="row">6</th>
+            <td><%= @meeting.home_riders.home_rider_6 %></td>
+            <td></td>
+            <td><%= @meeting.away_riders.away_rider_6 %></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th scope="row">7</th>
+            <td><%= @meeting.home_riders.home_rider_7 %></td>
+            <td></td>
+            <td><%= @meeting.away_riders.away_rider_7 %></td>
+            <td></td>
+        </tr>
+        
+    </tbody>
+</table>
