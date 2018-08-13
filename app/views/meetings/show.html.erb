@@ -59,13 +59,18 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-md-12">
+    <hr>
+  </div>
+</div>
 
 
 <div class="row">
   <div class="col-md-12">
     <%= (@meeting.home_riders.nil? || @meeting.away_riders.nil?) ? 
-      (button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block", disabled: true)  :
-      (button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block", method: :get) %>
+      (button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block btn-success", disabled: true)  :
+      (button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block btn-success", method: :get) %>
   </div>
 </div>
 
