@@ -50,7 +50,9 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%= button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block", method: :get %>
+    <%= (@meeting.home_riders.nil? || @meeting.away_riders.nil?) ? 
+      (button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block", disabled: true)  :
+      (button_to 'Add heat', new_meeting_heat_path(@meeting), class: "btn btn-small btn-block", method: :get) %>
   </div>
 </div>
 

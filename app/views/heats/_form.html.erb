@@ -2,7 +2,7 @@
 <%= f.hidden_field  :heat_number, value: @heat.heat_number %>
 <%= f.input :heat_time, placeholder: 'Heat time' %>
 
-
+<%= f.hidden_field :red_gate, value: get_red_gate(@heat.heat_number, @meeting.gate)  %>
 <%= f.input :red_rider, collection: [[@home_riders.home_rider_1, @home_riders.home_rider_1],
                                      [@home_riders.home_rider_2, @home_riders.home_rider_2],
                                      [@home_riders.home_rider_3, @home_riders.home_rider_3],
@@ -14,7 +14,7 @@
                                      input_html: {class: 'selectpicker'}%>
 <%= f.input :red_score, collection: Heat::SCORE, input_html: {class: 'selectpicker'} %>
 
-<%= f.hidden_field :blue_gate, input_html: { value: get_blue_gate(@heat.heat_number, @meeting.id) } %>
+<%= f.hidden_field :blue_gate, value: get_blue_gate(@heat.heat_number, @meeting.gate)  %>
 <%= f.input :blue_rider, collection: [[@home_riders.home_rider_1, @home_riders.home_rider_1],
                                      [@home_riders.home_rider_2, @home_riders.home_rider_2],
                                      [@home_riders.home_rider_3, @home_riders.home_rider_3],
@@ -26,7 +26,7 @@
                                      input_html: {class: 'selectpicker'} %>
 <%= f.input :blue_score, collection: Heat::SCORE %>
 
-<%= f.hidden_field :white_gate, input_html: {value: get_white_gate(@heat.heat_number, @meeting.id) } %>
+<%= f.hidden_field :white_gate, input_html: {value: get_white_gate(@heat.heat_number, @meeting.gate) } %>
 <%= f.input :white_rider, collection: [[@away_riders.away_rider_1, @away_riders.away_rider_1],
                                        [@away_riders.away_rider_2, @away_riders.away_rider_2],
                                        [@away_riders.away_rider_3, @away_riders.away_rider_3],
@@ -38,7 +38,7 @@
                                      input_html: {class: 'selectpicker'} %>
 <%= f.input :white_score, collection: Heat::SCORE %>
 
-<%= f.hidden_field :yellow_gate, input_html: {value: get_yellow_gate(@heat.heat_number, @meeting.id) }  %>
+<%= f.hidden_field :yellow_gate, input_html: {value: get_yellow_gate(@heat.heat_number, @meeting.gate) }  %>
 <%= f.input :yellow_rider, collection: [[@away_riders.away_rider_1, @away_riders.away_rider_1],
                                         [@away_riders.away_rider_2, @away_riders.away_rider_2],
                                         [@away_riders.away_rider_3, @away_riders.away_rider_3],
