@@ -14,9 +14,9 @@ class HeatsController < ApplicationController
 
   def create
     @meeting = Meeting.find(params[:meeting_id])
-    @heat = Heat.new(heat_params)
+    @meeting.heats << Heat.new(heat_params)
     respond_to do |format|
-      if @meeting.heats << @heat
+      if @meeting.save
         format.html { redirect_to meeting_path(@meeting), notice: 'Heat saved' }
       else
         format.html { redirect_to new_meeting_heat_path, notice: 'Oops!' }
