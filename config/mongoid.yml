@@ -24,5 +24,4 @@ production:
     default:
       database: mongodb://heroku_1tw2lm9q:gbjfetp45k759m54v0bmpm1h0c@ds119652.mlab.com:19652/heroku_1tw2lm9q
       options:
-        skip_version_check: true
 
