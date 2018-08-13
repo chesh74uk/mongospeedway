@@ -20,6 +20,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="d-flex bd-highlight">
+      
       <div class="p-2 flex-fill bd-highlight">
         <nav class="nav nav-pills nav-justified justify-content-center">
           <%= @meeting.home_riders.nil? ? 
@@ -34,18 +35,30 @@
                 (button_to 'Edit riders', edit_meeting_away_rider_path(@meeting, @away_rider ), class: "btn btn-sm btn-outline-dark", method: :get) %>
         </nav>
       </div>
+      
     </div>
   </div>
 </div>
-
 
 <div class="row">
   <div class="col-md-12">
     <div class="d-flex bd-highlight">
-      <div class="p-2 flex-fill bd-highlight"><%= button_to "rider stats", meeting_static_pages_rider_path(@meeting), method: :get  %></div>
+      
+      <div class="p-2 flex-fill bd-highlight">
+        <nav class="nav nav-pills nav-justified justify-content-center">
+          <%= button_to "Rider stats", meeting_static_pages_rider_path(@meeting), method: :get, class: "btn btn-sm btn-info"  %>
+        </nav>
+      </div>
+      <div class="p-2 flex-fill bd-highlight">
+        <nav class="nav nav-pills nav-justified justify-content-center">
+          <%= button_to "Gate stats", meeting_static_pages_gate_path(@meeting), method: :get, class: "btn btn-sm btn-info"  %>
+        </nav>
+      </div>
+      
     </div>
   </div>
 </div>
+
 
 
 <div class="row">
