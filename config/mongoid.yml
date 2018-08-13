@@ -155,3 +155,12 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+        
+production:
+    clients:
+        default:
+            uri: &lt;%= ENV['MONGODB_URI'] %&gt;
+        options:
+            skip_version_check: true
+        safe: true
+
