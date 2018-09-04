@@ -127,6 +127,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-ujs (0.1.0)
+      railties (>= 3.1)
     railties (5.2.0)
       actionpack (= 5.2.0)
       activesupport (= 5.2.0)
@@ -192,11 +194,12 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
-  jquery-rails
+  jquery-rails (~> 4.3, >= 4.3.3)
   listen (>= 3.0.5, < 3.2)
   mongoid (~> 6.1.0)
   puma (~> 3.11)
   rails (~> 5.2.0)
+  rails-ujs (~> 0.1.0)
   sass-rails (~> 5.0)
   simple_form
   spring
