@@ -29,6 +29,8 @@ gem 'mongoid', '~> 6.1.0'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'actionview', '~> 5.2.2.1'
+gem 'railties', '~> 5.2.2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
